@@ -4,6 +4,9 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 body {
     font-family: 'Raleway', sans-serif;
@@ -11,7 +14,7 @@ body {
     margin: 0;
     background-color: #fff;
 }
-header__logo {
+.header__logo {
     height: 30px;
 }
 a {
@@ -132,4 +135,58 @@ button:hover{
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.about_sun-imege{
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+@media (max-width: 720px) {
+   header {
+    padding: 10px;
+   }
+   .header__logo {
+    height: 20px;
+}
+    header a {
+        margin-right: 10px;
+    }
+    .about {
+       flex-direction: column-reverse;
+       padding: 50px 10px;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about_image {
+        width: 280px;
+    }
+    .about_sun-imege {
+        width: 75px;
+        height: 75px;
+    }
+    .form {
+        padding: 50px 10px;
+        
+    }
+    .form h1{
+        font-size: 36px;
+    }
+    footer{
+        padding: 50px 10px;
+    }
+    .footer__container{
+        flex-direction: column;
+    }
 }
